@@ -28,7 +28,7 @@ jobs:
           curl -fsSL git.io/file-transfer | sh
           ./transfer wet ./downloads | tee wetransfer.log
           echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-          echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+          echo "::set-output name=url::$(cat wetransfer.log | grep https)"
           ls
       - name: Generate Download URL
         id: tag
