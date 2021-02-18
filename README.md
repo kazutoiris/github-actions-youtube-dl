@@ -1,4 +1,4 @@
-# Github-actions-youtube-dl ![do](https://github.com/kazutoiris/github-actions-youtube-dl/workflows/do/badge.svg)
+# Github-actions-youtube-dl ![CI](https://github.com/kazutoiris/github-actions-youtube-dl/workflows/CI/badge.svg)
 
 使用 GitHub Actions 下载 YouTube 最高画质视频，并自动发布到国内 CDN。
 
