@@ -27,15 +27,13 @@ jobs:
         run: |
           curl -fsSL git.io/file-transfer | sh
           ./transfer wet ./downloads | tee wetransfer.log
-          echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-          echo "::set-output name=url::$(cat wetransfer.log | grep https)"
-          ls
+          cat wetransfer.log | grep https
       - name: Generate Download URL
         id: tag
         run: |
           echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
           touch release.txt
-          echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
+          cat wetransfer.log | grep https >> release.txt
           echo "::set-output name=status::success"
       - name: Upload URL
         uses: actions/upload-artifact@v2
